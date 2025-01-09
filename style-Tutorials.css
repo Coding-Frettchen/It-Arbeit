@@ -1,0 +1,302 @@
+
+@keyframes colorchangs {
+    0% {
+        color: green;
+    }
+    100% {
+        color: white;
+    }
+}
+
+body {
+    margin-top: 8px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Tutorials-List {
+    font-size: 25px;
+}
+.Tutorials-List-Commands code {
+    font-family: "Courier New", Courier, monospace;
+    color: #00CED1;
+}
+.scroll-header {
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    transition: transform 1s ease-in-out;
+}
+
+.Kali-Background {
+    background-image: url('Bilder/hintergunrd-kali.jpg'); /* Hintergurund bild */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fixiert das Hintergrundbild */
+    height: 100%; /* Höhe auf Bildschirmgröße setzen */
+} 
+
+.scroll-header.hidden {
+    transform: translateY(-100%);
+}
+
+/* Schatten beim Sticky-Effekt */
+header.sticky {
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+/* Stil für das Header-H1 */
+.scroll-header h1 {
+    color: green;
+    font-size: 50pt;
+}
+
+
+/* Navigation */
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 60px 0 0 0;
+    gap: 40px;      
+}
+.nav-list a {
+    text-decoration: none;
+    color: green;
+    transition: color 0.3s ease;
+}
+
+/* Hover-Effekt für die Navigationselemente */
+.nav-list a:hover {
+    animation: colorchangs 0.5s forwards; /*Frabwechsel bei Hover */
+}
+
+main {
+    margin-top: 180px;
+    color: green;
+}
+footer {
+    color: green;
+    border-top: 1px solid green;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.Tutorials-Einleitung {
+    font-size: 30px;
+}
+.footer-listen {
+    display: flex;
+    justify-content: space-around; /* Passt die Positionierung der Listen an */
+    gap: 20px; /* Optional: Abstand zwischen den Listen */
+}
+.img-h1	img {
+    width: 200px;
+    height: auto;
+}
+/* Media Queries für verschiedene Bildschirmgrößen */
+
+/* Große Bildschirme (ab 1350px) */
+@media (min-width: 1350px) {
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 50pt; /* Mittelgroße Schriftgröße */
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        gap: 60px;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 60px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 40px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 230px;
+        height: auto;
+    }
+}
+/* Mittelgroße Bildschirme (ab 1200px und bis 1349px) */
+@media (min-width: 1200px) and (max-width: 1349px) {
+    
+    main {
+        margin-top: 170px;
+    }
+
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 50pt; /* Mittelgroße Schriftgröße */
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        gap: 60px;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 60px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 30px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 240px;
+        height: auto;
+    }
+}
+/* Mittelgroße Bildschirme (Tablets, ab 768px bis 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    main {
+        margin-top: 130px;
+    }
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 30pt; /* Mittelgroße Schriftgröße */
+
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 25px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 150px;
+        height: auto;
+    }
+}
+/* Kleine Bildschirme (Handys, max. 767px) */
+@media (max-width: 767px) {
+
+    main {
+        margin-top: 140px;
+    }
+    .scroll-header {
+        flex-direction: column; /* Elemente untereinander anordnen */
+        padding: 10px;
+        margin: 0;
+        gap: 0px; /* Weniger Abstand */
+        align-items: center;
+    }
+
+    .img-h1 {
+        display: flex;
+        padding-left: 0;
+        padding-right: 10px;
+        flex-direction: row;
+        gap: 10px;
+        margin-left: 30px;
+
+
+    }
+    .scroll-header h1 {
+        font-size: 20pt; /* Kleinere Schriftgröße */
+        text-align: center; /* Textzentrierung */
+        padding-right: 120px;
+    }
+
+    .nav-list {
+        flex-direction: row; /* Navigation untereinander anordnen */
+        justify-content: center;
+        padding-right: 10px;
+        gap: 20px; /* Weniger Abstand */
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .nav-list li {
+        padding: 5px;
+        font-size: 20px; /* Kleinere Schriftgröße */
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 0;
+        width: 100px;
+        height: auto;
+    }
+}
+/* * {
+    outline: 1px solid red;
+} */
+.scroll-header {
+    border-bottom: 2px solid gray; /* Grauer strich */ 
+} 

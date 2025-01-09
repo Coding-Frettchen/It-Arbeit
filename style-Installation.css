@@ -1,0 +1,396 @@
+/* Animation von grün zu weiß*/
+@keyframes colorchangs {
+    0% {
+        color: green;
+    }
+    100% {
+        color: white;
+    }
+}   
+/*Body Properties*/
+body {
+    margin-top: 8px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Main Properties*/
+main {
+    margin-top: 180px;
+    color: green;
+}
+/*Des Verschwindibus Header Eigenschaften*/
+.scroll-header {
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    transition: transform 1s ease-in-out;
+    margin: 0;
+    align-items: baseline;
+    border-bottom: 2px solid gray; /* Grauer Strich */
+}
+.Kali-Background {
+    background-image: url('Bilder/hintergunrd-kali.jpg'); /* Hintergurund bild */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fixiert das Hintergrundbild */
+    height: 100%; /* Höhe auf Bildschirmgröße setzen */
+} 
+header.sticky {
+    box-shadow: 0 4px 2px -2px gray;
+}
+/*MAcht das verschwindibus nach oden*/
+.scroll-header.hidden {
+    transform: translateY(-100%);
+}
+
+/*Macht kali Schriftzug*/
+.scroll-header h1 {
+    color: green;
+    font-size: 50pt;
+}
+/*Macht Navigationsleiste*/
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 60px 0 0 0;
+    gap: 40px;      
+}
+/*Macht die Schrift der verlinkung*/
+.nav-list a {
+    text-decoration: none;
+    color: green;
+    transition: color 0.3s ease;
+}
+/*Simsalabim, Aus Grün wird weiß*/
+.nav-list a:hover {
+    animation: colorchangs 0.5s forwards;
+}
+/*Properties*/
+.verzeichniss {
+    max-width: 250px;
+    padding: 15px;
+}
+/**/
+.verzeichniss h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: green;
+    text-decoration: underline;
+}
+/*MAcht listen schrift*/
+.verzeichniss ul {
+    list-style: none;
+    font-size: 30px;
+    padding: 5px 0 0 40px;
+    margin: 0;
+    cursor: pointer;
+}
+/*Link schmuck*/
+.verzeichniss a {
+    text-decoration: none;
+    color: green;
+}
+/*Abstand ist wichtig*/
+.verzeichniss li {
+    margin-bottom: 5px;
+}
+/*>> ...*/
+.verzeichniss li::before {
+    content: "\00BB    ";
+}
+/*Simsalabim aus Grün wird Blau mit unterstrich*/
+.verzeichniss a:hover {
+    color: rgb(42, 42, 186);
+    text-decoration: underline;
+}
+.Installation-inhalt {
+    font-size: 30px;
+}
+/*Keine Ahnung warum ich dachte das das wichtig ist*/
+.requirements {
+    max-width: max-content;
+    padding: 15px;
+}
+
+.requirements table {
+    font-size: 25px;
+}
+
+.requirements h2 {
+    font-size: 35px;
+    text-decoration: underline;
+}
+/*Macht ein paar schöne grüne Linien um die Tabelle*/
+.requirements table, th, td {
+    border: 1px solid green;
+    border-collapse: collapse;
+}
+/*MAcht die Schrift fett*/
+.requirements tr th {
+    text-decoration: solid;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+/*das auch*/
+.requirements-option {
+    font-weight: 700;
+    padding: 0 5px;
+}
+/*macht die schrift links*/
+.requirements tr td {
+    text-align: left;
+}
+
+/*macht Button Schön*/
+.Installation-inhalt button {
+    background-color: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 30px;
+    gap: 20px;
+}
+.Installation-inhalt h2 {
+    text-decoration: underline;
+}
+/*sollte nenn Pfeil machten (Spoiler macht es nicht)*/
+.Installation-inhalt button a::before {
+    content: '\2193' green;
+    transform: translateY(-50%);
+    font-size: 24px; 
+    color: green;
+  }
+/*der übliche kampf mit dem Link*/
+.Installation-inhalt button a {
+    text-decoration: none;
+    color: green;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+footer {
+    color: green;
+    border-top: 1px solid green;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.img-h1	img {
+    width: 200px;
+    height: auto;
+}
+.footer-listen {
+    display: flex;
+    justify-content: space-around; /* Passt die Positionierung der Listen an */
+    gap: 20px; /* Optional: Abstand zwischen den Listen */
+}
+/* Media Queries (Wenn Bildschirm groß = Schrift gross usw; wenn Bildschirm klein = schrift klein usw.)*/
+
+@media (min-width: 1350px) {
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 50pt; /* Mittelgroße Schriftgröße */
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        gap: 60px;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 60px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 40px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 230px;
+        height: auto;
+    }
+}
+/* Mittelgroße Bildschirme (ab 1200px und bis 1349px) */
+@media (min-width: 1200px) and (max-width: 1349px) {
+    
+    main {
+        margin-top: 170px;
+    }
+
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 50pt; /* Mittelgroße Schriftgröße */
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        gap: 60px;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 60px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 30px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 250px;
+        height: auto;
+    }
+}
+/* Mittelgroße Bildschirme (Tablets, ab 768px bis 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    main {
+        margin-top: 130px;
+    }
+    .scroll-header {
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+
+    }
+
+    .scroll-header h1 {
+       font-size: 30pt; /* Mittelgroße Schriftgröße */
+
+    }
+
+    .nav-list {
+        display: flex;
+        max-width: 100%;
+        justify-content: space-between;
+        margin-left: auto;
+        padding-right: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .nav-list li {
+
+        font-size: 25px; /* Mittelgroße Schriftgröße */
+        padding-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        
+    }
+    .img-h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;;
+        width: 150px;
+        height: auto;
+    }
+}
+/* Kleine Bildschirme (Handys, max. 767px) */
+@media (max-width: 767px) {
+
+    main {
+        margin-top: 140px;
+    }
+    .scroll-header {
+        flex-direction: column; /* Elemente untereinander anordnen */
+        padding: 10px;
+        margin: 0;
+        gap: 0px; /* Weniger Abstand */
+        align-items: center;
+    }
+
+    .img-h1 {
+        display: flex;
+        padding-left: 0;
+        padding-right: 10px;
+        flex-direction: row;
+        gap: 10px;
+        margin-left: 30px;
+
+
+    }
+    .scroll-header h1 {
+        font-size: 20pt; /* Kleinere Schriftgröße */
+        text-align: center; /* Textzentrierung */
+        padding-right: 120px;
+    }
+
+    .nav-list {
+        flex-direction: row; /* Navigation untereinander anordnen */
+        justify-content: center;
+        padding-right: 10px;
+        gap: 20px; /* Weniger Abstand */
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .nav-list li {
+        padding: 5px;
+        font-size: 20px; /* Kleinere Schriftgröße */
+    }
+    .img1 {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 0;
+        width: 100px;
+        height: auto;
+    }
+}
+/* * {
+    outline: 1px solid red;
+} */
+.scroll-header {
+    border-bottom: 2px solid gray; /* Grauer strich */ 
+} 
