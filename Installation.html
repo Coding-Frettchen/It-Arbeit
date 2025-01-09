@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=de>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport', content='width-device-width' intial-scale='1.0'>
+        <title>Kali Linux</title>
+        <meta name="description" content="Beschreibung für diese Webseite">
+        <link rel="Webside icon" href="Bilder/Kali-Logo-2..png">        
+        <link rel='stylesheet' href='style-Installation.css' >
+
+    </head>
+    <body class="Startseite">
+        <div class="Kali-Background">
+        <header class="scroll-header">
+            <div class="img-h1">
+                <a href="index.html">
+                    <img src="Bilder/kali log.jpg" alt="Kali Linux Logo" class="img1" />
+                </a>
+                <a href="index.html" style="text-decoration: none;">
+                <h1>Kali Linux</h1>
+                </a>>
+                
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="Installation.html">Installation</a></li>
+                <li><a href="Tools.html">Tools-List</a></li>
+                <li><a href="Tutorials.html">Tutorials</a></li>
+            </ul>
+            
+            
+        </header>
+        <main>
+            <div class="verzeichniss">
+                <h2>Inhalt :</h2>
+                <ul>
+                    <li><a href="#Installer">Installer</a></li>
+                    <li><a href="#Pre-built-VMs">Pre-built VMs</a></li>
+                    <li><a href="#Mobile">Mobile</a></li>
+                    <li><a href="#Cloud">Cloud</a></li>
+                    <li><a href="#Containers">Containers</a></li>
+                    <li><a href="#Live">Live</a></li>
+                    <li><a href="#WSL">WSL</a></li>
+                </ul>
+            </div>
+            <div class="requirements">
+                <h2>Requirements for Kali Linux</h2>
+
+                <table>
+                    <tr><th>Option</th><th>Minimum Requirements</th><th>Recommended Requirements</th></tr>
+                    <tr>
+                        <td class="requirements-option">Installer</td>
+                        <td><ul>
+                            <li>CPU: 1GHz Dual Core (x64/ARM)</li>
+                            <li>Ram: 2 GB</li>
+                            <li>Storage: 20 GB</li>
+                            <li>DVD-Drive/USB port for installation</li>
+                        </ul></td>
+                        <td><ul>
+                            <li>CPU: Modern Multi Core (e.g Intel Core i5, AMD Ryzen 5)</li>
+                            <li>Ram: 4 GB or more</li>
+                            <li>Storage: 50 GB</li>
+                            <li>Virtualization support (Intel VT-x, AMD-V</li>
+                        </ul></td>
+                    </tr>
+                    <td class='requirements-option'>Pre-built VM</td>
+                    <td><ul>
+                    <li>CPU: 1 GHz Dual Core (x64)</li>
+                    <li>Ram: 2 GB</li>
+                    <li>Storage: 20 GB</li>
+                    <li>Virtual environment (VMware, VirtualBox, Hyper-V, QEMU)</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: Modern Multi Core with virtualization support (e.g. Intel Core i5, AMD Ryzen 5)</li>
+                    <li>Ram: 4 GB or more</li>
+                    <li>Storage: 50 GB</li>
+                    <li>SSD for better VM performance</li>
+                    </ul></td>
+                    </tr>
+                    <td class='requirements-option'>Mobile</td>
+                    <td><ul>
+                    <li>CPU: ARMv7/ARMv8 (at least 1 GHz)</li>
+                    <li>supported ARM device</li>
+                    <li>Ram: at least 1 GB</li>
+                    <li>Storage: 8 GB</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: Modern ARM processor (eg. Raspberry Pi 4, Quad-Core ARM Cortex-A72)</li>
+                    <li>Ram: 2 GB</li>
+                    <li>Storage: 20 GB</li>
+                    </ul></td>
+                    </tr>
+                    <td class='requirements-option'>Cloud</td>
+                    <td><ul>
+                    <li>CPU: 1 vCPU (x64)</li>
+                    <li>Supported cloud platform</li>
+                    <li>Ram: 1 GB</li>
+                    <li>Storage: 8 GB</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: 2 GHz Multi Core </li>
+                    <li>Ram: 2 GB or more</li>
+                    <li>Storage: 20 GB</li>
+                    </ul></td>
+                    </tr>
+                    <td class='requirements-option'>Containers</td>
+                    <td><ul>
+                    <li>CPU: 1 GHz Dual Core (x64)</li>
+                    <li>Ram: 1 GB</li>
+                    <li>Storage: 2 GB</li>
+                    <li>Container capable platform (e.g. Docker, Podman)</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: 2 GHz Multi Core</li>
+                    <li>Ram: 2 GB or more</li>
+                    <li>Storage: 5 GB</li>
+                    <li>SSD for better container performance</li>
+                    </ul></td>
+                    </tr>
+                    <td class='requirements-option'>Live</td>
+                    <td><ul>
+                    <li>CPU: 1 GHz Dual Core (x64, ARM)</li>
+                    <li>Ram: 1 GB</li>
+                    <li>8 GB USB-Stick or DVD</li>
+                    <li>x64/ARM architecture</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: 2 GHz Multi Core</li>
+                    <li>Ram: 2 GB or more</li>
+                    <li>USB 3.0 for faster boot time</li>
+                    <li>Persistent feature for storage</li>
+                    </ul></td>
+                    </tr>
+                    <td class='requirements-option'>WSL</td>
+                    <td><ul>
+                    <li>CPU: 1 GHz Dual Core (x64)</li>
+                    <li>Ram: 2 GB</li>
+                    <li>Storage: 8 GB</li>
+                    <li>Windows 10 or 11</li>
+                    </ul></td>
+                    <td><ul>
+                    <li>CPU: Modern Multi Core (e.g. Intel Core i5, AMD Ryzen 5)</li>
+                    <li>Ram: 4 GB</li>
+                    <li>SSD for better performance</li>
+                    <li>Windows 11</li>
+                    </ul></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Installation-inhalt">
+                <div class="Installer" id="Installer">
+                    <h2>Installer Images</h2>
+                    <p>
+                        Kali ist eine sogenannte Rolling-Distribution, was bedeutet, dass wir Updates sofort veröffentlichen, sobald sie verfügbar sind. 
+                        Benutzer können aus einer Vielzahl von Abbildern wählen. Weitere Informationen finden Sie unter „Welches Abbild sollte ich herunterladen?“ und „Kali-Zweige“. 
+                        Für die meisten Nutzer empfehlen wir das neueste „Point Release“-Abbild unten, 
+                        außer in Fällen, in denen ein Benutzer eine spezifische Fehlerbehebung benötigt – in diesem Fall könnte der wöchentliche Build die beste Wahl sein. 
+                        Wir erstellen vierteljährlich neue Kali Linux-Abbilder. Diese werden die offiziellen „Point Releases“. Diese Abbilder werden getestet und anschließend mit einem Blog-Beitrag angekündigt.
+                    </p> <!-- Der Text ist einfach Copy-pastet allso wenn was nicht passt nicht wundern -->
+                    <div class="Download-Button">
+                    <button><a href="https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-installer-amd64.iso">Kali Linux installer</a></button> <!-- ISt der richtige link von der Kali linux webseite-->
+                    </div>
+
+                    <video width="640" height="360" controls>
+                        <source src="Videos/Install Kali Linux Version 2024 1 from ISO - YouTube.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="Pre-built-VMs" id="Pre-built-VMs">
+                    <h2>Per-built VMs</h2>
+                    <p>
+                        Kali Linux VMware- und VirtualBox-Abbilder sind für Benutzer verfügbar, die eine Installation in einer virtuellen Maschine bevorzugen oder spezifische Anforderungen haben. 
+                        Diese Abbilder verwenden standardmäßig die Zugangsdaten „kali/kali“.
+                    </p> <!-- Same for this one-->
+                    <div class="Download-Button">
+                    <button ><a href='https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-vmware-amd64.7z'>VMware</a></button>
+                    <button ><a href='https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-virtualbox-amd64.7z'>VirtualBox</a></button>
+                    <button ><a href='https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-hyperv-amd64.7z'>Hyper-V</a></button>
+                    <button ><a href='https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-qemu-amd64.7z'>QEMU</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/KAli linux pre build vm - YouTube.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="Mobile" id="Mobile">
+                    <h2>Mobile</h2>
+                    <p>
+                        Kali NetHunter Pro ist die offizielle Kali Linux-Version für mobile Geräte wie das Pine64 PinePhone und PinePhone Pro.
+                    </p>    <!--Auch der-->
+                    <div class="Download-Button">
+                    <button ><a href='https://kali.download/nethunterpro-images/kali-2024.4/kali-nethunterpro-2024.4-pinephone.img.xz'>Kali NetHunterPro image with Phosh for Pine64 PinePhone</a></button>
+                    <button ><a href='https://kali.download/nethunterpro-images/kali-2024.4/kali-nethunterpro-2024.4-pinephonepro.img.xz'>Kali NetHunterPro image with Phosh for Pine64 PinePhone Pro</a></button>
+                    <button ><a href='https://kali.download/nethunterpro-images/kali-2024.4/kali-nethunterpro-2024.4-sdm845.tar.xz'>Kali NetHunterPro image with Phosh for Qualcomm 'QCOM' SDM845</a></button>
+                    <button ><a href='https://kali.download/nethunterpro-images/kali-2024.4/kali-nethunterpro-2024.4-sm7225.tar.xz'>	Kali NetHunterPro image with Phosh for Qualcomm 'QCOM' SM7225</a></button>
+                    <button ><a href='https://kali.download/nethunterpro-images/kali-2024.4/kali-nethunterpro-2024.4-amd64.img.xz'>Kali NetHunterPro AMD64 image with Phosh for Testing/Deployment</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/KAli linux pinephone - YouTube.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="Cloud"  id="Cloud">
+                    <h2>Cloud</h2>
+                    <p>
+                        Kali Cloud-Abbilder können schnell in verschiedenen Cloud-Infrastrukturen bereitgestellt werden. 
+                        Dadurch ist ein einfacher Zugriff auf eine Kali-Installation in einer modernen Umgebung mit leistungsstarker Hardware möglich. 
+                        Diese Abbilder werden häufig für kurzzeitige Kali-Installationen verwendet, die schnell eingerichtet und abgebaut werden können.
+                    </p>    <!-- Ja, der auch-->
+                    <div class="Download-Button">
+                    <button ><a href='https://aws.amazon.com/marketplace/pp/B08LL91KKB'>AWS Marketplace</a></button>
+                    <button ><a href='https://www.linode.com/marketplace/apps/kali-linux/kali-linux/'>Linode Marketplace</a></button>
+                    <button ><a href='https://azuremarketplace.microsoft.com/en/marketplace/apps/kali-linux.kali'>Microsoft Azur Marketplace</a></button>
+                    <button ><a href='https://kali.download/cloud-images/kali-2024.4/kali-linux-2024.4-cloud-genericcloud-amd64.tar.xz'>Generic Cloud Image for x64</a></button>
+                    <button ><a href='https://kali.download/cloud-images/kali-2024.4/kali-linux-2024.4-cloud-genericcloud-arm64.tar.xz'>Generic Cloud Image for ARM64</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/how to Run Kali Linux in the cloud An AWS Tutorial - YouTube-01.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <div class="Containers" id="Containers">
+                    <h2>Containers</h2>
+                    <p>
+                        Mit Containern wie Docker und LXC/LXD können Kali-Container das Kali-Toolset auf Ihrem 
+                        Host-Betriebssystem bereitstellen, ohne ein zusätzliches vollständiges Betriebssystem auszuführen. 
+                        Es gibt jedoch Einschränkungen, z. B. keinen direkten Hardwarezugriff und komplizierte Handhabung eingehender Verbindungen.
+                        </p>
+                    <div class="Download-Button">
+                    <button ><a href='https://hub.docker.com/u/kalilinux/'>Docker</a></button>
+                    <button ><a href='https://images.linuxcontainers.org/'>LXC/LXD</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/Easy Kali Linux in Docker Setup Penetration Testing Simplified --01.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="Live" id="Live">
+                    <h2>Live</h2>
+                    <p>
+                        Ein Kali Linux Live-Abbild auf CD/DVD/USB/PXE ermöglicht den Zugriff auf eine vollständige Kali-Installation, ohne das bereits installierte Betriebssystem zu verändern. 
+                        Dies bietet schnellen und einfachen Zugriff auf das Kali-Toolset mit allen Vorteilen einer Bare-Metal-Installation. 
+                        Es gibt jedoch einige Nachteile, z. B. langsamere Speicheroperationen aufgrund des verwendeten Speichermediums.
+
+                        For most users, we recommend the latest “point release” image below, except in cases when a user requires a specific bug patch, in which case the weekly build may be best.
+                    </p>    <!-- sie verstehen das Konzept-->
+                    <div class="Download-Button">
+                    <button ><a href='https://cdimage.kali.org/kali-2024.4/kali-linux-2024.4-live-amd64.iso'>Kali Linux Live</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/Kali Linux USB Live Boot with Persistence in 5 minutes - YouTube-01.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="WSL" id="WSL">
+                    <h2>WSL</h2>
+                    <p>
+                        Das Windows Subsystem for Linux (WSL) ist ein Softwarepaket für moderne Windows-Installationen, das die parallele Ausführung von Linux unter Windows ermöglicht. 
+                        Das Kali WSL-Paket bietet einfachen Zugriff auf das Kali-Toolset. 
+                        Dies hat die gleichen Nachteile wie eine Standard-VM, jedoch mit weniger Overhead und besserer Integration.
+                    </p>
+                    <div class="Download-Button">
+                    <button ><a href='https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07'>Kali in Microsoft Store</a></button>
+                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="Videos/How to Install Kali Linux On Windows 11 Using WSL Step-by-Step -.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+            </div>
+        </main>
+        </div>
+        <script src="script.js"></script>
+        <footer>
+            <h3>About Us</h3>
+            <p>Kali Linux is a trusted platform for security professionals worldwide, providing cutting-edge tools for penetration testing, security research, and more.</p>
+            <div class="footer-listen">
+                <ul>
+                    <h3>Quick Links</h3>
+                    <li>Home</li>
+                    <li>About Kali Linux</li>
+                    <li>Kali Tools</li>
+                    <li>Documentation</li>
+                    <li>Community Forums</li>
+                    <li>Contact Us</li>
+                </ul>
+                <ul>
+                    <h3>Stay Connected</h3>
+                    <li>Twitter</li>
+                    <li>GitHub</li>
+                    <li>YouTube</li>
+                </ul>
+                <ul>
+                    <h3>Legal</h3>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            
+            <p>© 2025 Offensive Security. All Rights Reserved.</p>
+            </footer>
+    </body>
+</html>
